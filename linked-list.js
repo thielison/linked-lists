@@ -133,6 +133,27 @@ class LinkedList {
         return false;
     }
 
+    // Returns the index of the node containing value, or null if not found
+    find(value) {
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
+        let current = this.head;
+        let count = 0;
+
+        while (current) {
+            if (current.value === value) {
+                return `True: ${value} found at index ${count}`;
+            }
+
+            count += 1;
+            current = current.nextNode;
+        }
+
+        return `null: not found.`;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";

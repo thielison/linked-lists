@@ -46,12 +46,31 @@ class LinkedList {
 
     // Returns the total number of nodes in the list
     size() {
-        return this.listSize;
+        return `Num of nodes: ${this.listSize}`;
     }
 
     // Returns the first node in the list
     headNode() {
-        return this.head;
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
+        return `First node: ( ${this.head.value} )`;
+    }
+
+    // Returns the last node in the list
+    tailNode() {
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
+        let current = this.head;
+
+        while (current.nextNode) {
+            current = current.nextNode;
+        }
+
+        return `Last node: ( ${current.value} )`;
     }
 
     // Represents LinkedList objects as strings

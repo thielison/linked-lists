@@ -73,6 +73,27 @@ class LinkedList {
         return `Last node: ( ${current.value} )`;
     }
 
+    // Returns the node at the given index
+    at(index) {
+        if (index < 0 || index > this.listSize) {
+            return `Index out of range.`;
+        }
+
+        let current = this.head;
+        let count = 0;
+
+        while (current) {
+            if (count === index) {
+                return `Node at index ${index}: ( ${current.value} )`;
+            }
+
+            count += 1;
+            current = current.nextNode;
+        }
+
+        return `Node not found!`;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";

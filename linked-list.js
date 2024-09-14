@@ -44,6 +44,11 @@ class LinkedList {
         this.listSize += 1;
     }
 
+    // Returns the total number of nodes in the list
+    size() {
+        return this.listSize;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";
@@ -58,7 +63,7 @@ class LinkedList {
         // End of list
         string += `( ${current} )`;
 
-        console.log(string);
+        return string;
     }
 }
 

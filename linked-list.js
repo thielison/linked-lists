@@ -49,6 +49,11 @@ class LinkedList {
         return this.listSize;
     }
 
+    // Returns the first node in the list
+    headNode() {
+        return this.head;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";

@@ -94,6 +94,26 @@ class LinkedList {
         return `Node not found!`;
     }
 
+    // Removes the last element from the list
+    pop() {
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
+        let current = this.head;
+        let previous;
+
+        while (current.nextNode) {
+            previous = current;
+            current = current.nextNode;
+        }
+
+        previous.nextNode = null;
+        this.listSize -= 1;
+
+        return `Last element removed from the list.`;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";

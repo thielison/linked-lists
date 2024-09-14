@@ -114,6 +114,25 @@ class LinkedList {
         return `Last element removed from the list.`;
     }
 
+    // Returns true if the passed in value is in the list and otherwise returns false
+    contains(value) {
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
+        let current = this.head;
+
+        while (current) {
+            if (current.value === value) {
+                return true;
+            }
+
+            current = current.nextNode;
+        }
+
+        return false;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         let string = "";

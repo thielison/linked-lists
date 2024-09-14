@@ -156,6 +156,10 @@ class LinkedList {
 
     // Represents LinkedList objects as strings
     toString() {
+        if (this.listSize === 0) {
+            return `List is empty!`;
+        }
+
         let string = "";
         let current = this.head;
 

@@ -30,6 +30,21 @@ class LinkedList {
         this.listSize += 1;
     }
 
+    // Adds a new node containing value to the start of the list
+    prepend(value) {
+        // If list is empty (if there's no head), head will be set to this new Node
+        if (!this.head) {
+            this.head = new Node(value);
+        } else {
+            // If there's already a head, current head will be set to this new Node
+            // and all the other nodes will be pushed forward
+            this.head = new Node(value, this.head);
+        }
+
+        this.listSize += 1;
+    }
+
+    // Represents LinkedList objects as strings
     toString() {
         let string = "";
         let current = this.head;

@@ -154,6 +154,42 @@ class LinkedList {
         return `null: not found.`;
     }
 
+    // Inserts a new node with the provided value at the given index
+    insertAt(value, index) {
+        // If list is empty
+        if (this.listSize === 0) {
+            return "List is empty!";
+        }
+
+        // If invalid index
+        if (index < 0 || index > this.listSize) {
+            return `Invalid index.`;
+        }
+
+        // If index === 0, there's already a head. So, head will be set
+        // to this new Node and all the other nodes will be pushed forward
+        if (index === 0) {
+            this.prepend(value);
+
+            return;
+        }
+
+        let previous;
+        let current = this.head;
+        let indexCount = 0;
+
+        while (indexCount < index) {
+            previous = current;
+            current = current.nextNode;
+
+            indexCount += 1;
+        }
+
+        previous.nextNode = new Node(value, current);
+
+        this.listSize += 1;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         if (this.listSize === 0) {

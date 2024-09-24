@@ -16,4 +16,6 @@ list.append("turtle");
 // console.log(list.pop());
 // console.log(list.contains("turtle"));
 // console.log(list.find("parrot"));
+
+console.log(list.insertAt("BEAR", 3));
 console.log(list.toString());

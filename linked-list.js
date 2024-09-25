@@ -190,6 +190,39 @@ class LinkedList {
         this.listSize += 1;
     }
 
+    // Removes a node at the given index
+    removeAt(index) {
+        // Guard clause: Empty list
+        if (this.listSize === 0) return "Nothing to remove. List is empty!";
+
+        // Guard clause: Invalid index
+        if (index < 0 || index >= this.listSize) return "Invalid index.";
+
+        let current = this.head;
+        let previous = null;
+        let position = 0;
+
+        // If removing the head node
+        if (index === 0) {
+            this.head = current.nextNode;
+        } else {
+            // Traverse the list to find the node before the one to remove
+            while (position < index) {
+                previous = current;
+                current = current.nextNode;
+                position += 1;
+            }
+
+            // Remove the node
+            previous.nextNode = current.nextNode;
+        }
+
+        // Adjust list size after removal
+        this.listSize -= 1;
+
+        return `Node at index ${index} removed.`;
+    }
+
     // Represents LinkedList objects as strings
     toString() {
         if (this.listSize === 0) {
